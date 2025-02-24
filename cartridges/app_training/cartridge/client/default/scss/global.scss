@@ -2,3 +2,35 @@
 
 @import "~base/global";
 @import "product/detail";
+
+$discount-color: #fff;
+$discount-bg: #e63946;
+$discount-border: darken($discount-bg, 10%);
+$discount-border-radius: 8px;
+$discount-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+$discount-padding: 6px 12px;
+$discount-font-size: 1rem;
+$discount-font-weight: 700;
+$discount-transition: all 0.3s ease-in-out;
+
+.discount-percentage {
+    color: $discount-color;
+    font-weight: $discount-font-weight;
+    font-size: $discount-font-size;
+    background-color: $discount-bg;
+    border: 1px solid $discount-border;
+    border-radius: $discount-border-radius;
+    box-shadow: $discount-shadow;
+    padding: $discount-padding;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: $discount-transition;
+
+    &:hover {
+        background-color: lighten($discount-bg, 10%);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+}

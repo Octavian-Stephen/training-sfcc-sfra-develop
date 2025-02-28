@@ -1,0 +1,10 @@
+.product-table {
+    display: flex;
+    flex-wrap: wrap; // Allows items to wrap to the next line if necessary
+    gap: 16px; // Adjusts the space between items
+
+    > * {
+        flex: 1 1 200px; // Adjusts the width of each item
+        box-sizing: border-box; // Ensures padding and border are included in the element's total width and height
+    }
+}

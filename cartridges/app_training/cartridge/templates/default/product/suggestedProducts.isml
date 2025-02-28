@@ -1,0 +1,9 @@
+<table class="product-table">
+    <tr>
+        <isloop items="${pdict.suggestedProducts}" var="product">
+            <td>
+                <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', true, 'ratings', true)}" />
+            </td>
+        </isloop>
+    </tr>
+</table>

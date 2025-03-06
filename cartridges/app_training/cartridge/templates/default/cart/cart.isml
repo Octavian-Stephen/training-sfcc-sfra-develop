@@ -51,7 +51,9 @@
     <iselse/>
         <div class="container cart cart-page">
             <div class="row">
-                <!---product cards--->
+
+                <!---Product cards--->
+
                 <div class="col-sm-7 col-md-8">
                     <isloop items="${pdict.items}" var="lineItem">
                         <isif condition="${lineItem.productType === 'bundle'}">
@@ -67,7 +69,8 @@
                     <isinclude template="cart/cartApproachingDiscount" />
                 </div>
 
-                <!---totals, and checkout actions--->
+                <!---Totals, and checkout actions--->
+
                 <div class="col-sm-5 col-md-4 totals">
                     <isinclude template="cart/cartPromoCode" />
                     <div class="coupons-and-promos">
@@ -91,7 +94,9 @@
     </isif>
     <div class="container">
         <isslot id="cart-recommendations-m" description="Recommended products" context="global" />
+        
         <!-- Custom Message for Cart Total Exceeding Threshold -->
+
         <isif condition="${pdict.cartMessage && pdict.cartMessage.trim() !== ''}">
             <div class="alert alert-info cart-total-message" role="alert">
                 ${pdict.cartMessage.replace('[[cartTotalThreshold]]', pdict.cartTotalThreshold)}

@@ -2,3 +2,21 @@
 
 @import "~base/global";
 @import "product/detail";
+
+.cart-total-message {
+    display: inline-block;
+    background-color: #fcc419; // Light orange color for contrast
+    color: #495057;
+    border-radius: 12px; // Rounded corners for smooth edges
+    padding: 16px; // Padding to give the message some space
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    margin-top: 20px; // Space above the cart total message
+    transition: all 0.3s ease; // Smooth transition for all changes
+
+    &:hover {
+        background-color: #ff922b; // Slightly darker orange on hover
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Enhanced shadow for more depth
+        cursor: pointer;
+    }
+}

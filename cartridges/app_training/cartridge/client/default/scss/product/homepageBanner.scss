@@ -1,0 +1,15 @@
+.banner {
+    text-align: center;
+
+    img {
+        width: 750px;
+        height: 500px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

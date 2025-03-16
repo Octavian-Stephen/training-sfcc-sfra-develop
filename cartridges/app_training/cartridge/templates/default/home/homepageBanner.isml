@@ -1,0 +1,6 @@
+<div class="banner">
+<h1>Picturesque View</h1>
+<br>
+<isinclude template="/components/modules" sf-toolkit="off" />
+<iscontentasset aid="homepage-banner-image" var="contentAsset" />
+</div>

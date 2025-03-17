@@ -1,0 +1,46 @@
+.size-guide-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 176px;
+}
+
+.size-guide-title {
+    font-size: 24px;
+}
+
+.size-guide-table {
+    table {
+        width: 900px;
+        font-size: 18px;
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        text-align: center;
+        padding: 8px 32px;
+    }
+
+    thead tr {
+        background-color: #087f5b;
+        color: #fff;
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                background-color: #f8f9fa;
+            }
+
+            &:nth-child(even) {
+                background-color: #e9ecef;
+            }
+
+            &:hover {
+                background-color: #d1e7dd;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+        }
+    }
+}

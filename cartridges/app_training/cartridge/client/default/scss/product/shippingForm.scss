@@ -1,0 +1,129 @@
+.shipping-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+
+    .form-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        margin-bottom: 15px;
+        h3 {
+            font-size: 1.25rem;
+            color: #444;
+            font-weight: bold;
+        }
+    }
+
+    .form-group {
+        display: grid;
+        gap: 1rem;
+
+        label {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 1.3rem; /* Increased padding for more vertical space */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.3rem; /* Larger font size for better readability */
+            background-color: #fafafa;
+            transition: border-color 0.3s ease;
+            line-height: 1.5; /* Increased line-height for better spacing */
+
+            &:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+        }
+
+        textarea {
+            resize: vertical;
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+
+        select {
+            padding: 1.2rem;
+            font-size: 1rem; /* Smaller font size to fit the city names */
+            word-wrap: break-word; /* Ensure long words wrap */
+            white-space: normal; /* Allow wrapping of long words */
+        }
+
+        .char-count {
+            font-size: 0.875rem;
+            color: #666;
+            text-align: right;
+        }
+
+        /* Styling for checkboxes */
+        input[type="checkbox"] {
+            width: 25px; /* Increase checkbox size */
+            height: 25px; /* Increase checkbox size */
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .checkbox-label {
+            font-size: 1.25rem; /* Larger font for checkbox label */
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .personal-info,
+    .address-info,
+    .payment-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .street-postal {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-submit {
+        background-color: #007bff;
+        color: #fff;
+        padding: 1.2rem 2rem;
+        font-size: 1.25rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    /* Increased height and padding for better fit */
+    .form-group select,
+    .form-group input {
+        height: 60px; /* Increased height */
+    }
+
+    .form-group textarea {
+        height: 150px; /* Increased height for comments section */
+    }
+}

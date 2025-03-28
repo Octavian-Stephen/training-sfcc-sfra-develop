@@ -1,0 +1,6 @@
+<slot xmlns="http://www.demandware.com/xml/impex/slot">
+    <slot-id>product-carousel</slot-id> <!-- This is the unique ID -->
+    <slot-name>Product Carousel</slot-name>
+    <slot-description>Displays a carousel of products</slot-description>
+    <slot-type>product</slot-type> <!-- It will hold products -->
+</slot>

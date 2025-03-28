@@ -1,0 +1,7 @@
+<isslot id="noresults-help" description="Recommendations for no result search" context="global" />
+
+<isslot id="noresult-recommendations" description="Recommendations for no result search" context="global" />
+
+ <isslot id="header_banner" description="…" context="global"/>
+<isslot id="category_top_featured" context="category" description="..." context-object="${pdict.ProductSearchResult.category}"/>
+<isslot id="fldr-landing-slotbanner" context="folder" description="Large Folder Landing Banner" context-object="${pdict.ContentSearchResult.folder}"/>

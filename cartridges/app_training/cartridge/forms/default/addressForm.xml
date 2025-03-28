@@ -1,0 +1,25 @@
+<form>
+    <!-- Address fields -->
+    <field formid="firstname" type="string" label="addressForm.firstname" mandatory="true" min-length="1" max-length="50" />
+    <field formid="lastname" type="string" label="addressForm.lastname" mandatory="true" min-length="1" max-length="50" />
+    <field formid="street" type="string" label="addressForm.street" mandatory="true" min-length="1" max-length="100" />
+    <field formid="city" type="string" label="addressForm.city" mandatory="true" min-length="1" max-length="50" />
+    <field formid="state" type="string" label="addressForm.state" mandatory="true" min-length="1" max-length="50" />
+    <field formid="postalCode" type="string" label="addressForm.postalCode" 
+           mandatory="true" 
+           regexp="^[0-9]{5}(-[0-9]{4})?$" 
+           parse-error="addressForm.postalCode.error" />
+    <field formid="country" type="string" label="addressForm.country" mandatory="true" min-length="1" max-length="50" />
+
+    <!-- Payment fields -->
+    <field formid="cardNumber" type="string" label="paymentForm.cardNumber" 
+           mandatory="true" 
+           min-length="16" 
+           max-length="16" 
+           parse-error="addressForm.cardNumber.error" />
+    <field formid="expiryDate" type="string" label="paymentForm.expiryDate" mandatory="true" min-length="5" max-length="5" />
+    <field formid="cvv" type="string" label="paymentForm.cvv" mandatory="true" min-length="3" max-length="3" />
+
+    <!-- Comments field -->
+    <field formid="comments" type="string" label="addressForm.comments" max-length="150" />
+</form>

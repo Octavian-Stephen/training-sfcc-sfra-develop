@@ -1,0 +1,181 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        // Include jQuery from CDN
+        assets.addJs('https://code.jquery.com/jquery-3.6.0.min.js');  
+
+        // Include your custom JavaScript file (addressForm.js)
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/addressForm.js');  <!-- Make sure this points to the correct JS file -->
+    </isscript>
+
+    <div class="shipping-container">
+        <h2 class="form-title">
+            <isprint value="${Resource.msg('addressForm.title', 'forms', 'Address Form')}" />
+        </h2>
+
+        <form action="${URLUtils.url('Address-Submit')}" method="post" class="shipping-section">
+            
+            <!-- First Name & Last Name Section -->
+            <div class="section-title">
+                <h3>
+                    <isprint value="${Resource.msg('addressForm.nameSection', 'forms', 'Personal Information')}" />
+                </h3>
+            </div>
+            <div class="form-group personal-info">
+                <div>
+                    <label for="firstname">
+                        <isprint value="${Resource.msg('addressForm.firstname', 'forms', 'First Name')}" />
+                    </label>
+                    <input type="text" id="firstname" name="firstname" value="${pdict.form.firstname.value ? pdict.form.firstname.value : ''}" placeholder="John" required />
+                </div>
+
+                <div>
+                    <label for="lastname">
+                        <isprint value="${Resource.msg('addressForm.lastname', 'forms', 'Last Name')}" />
+                    </label>
+                    <input type="text" id="lastname" name="lastname" value="${pdict.form.lastname.value ? pdict.form.lastname.value : ''}" placeholder="Doe" required />
+                </div>
+            </div>
+
+            <!-- Address Details Section -->
+            <div class="section-title">
+                <h3>
+                    <isprint value="${Resource.msg('addressForm.addressSection', 'forms', 'Address Details')}" />
+                </h3>
+            </div>
+            <div class="form-group address-info">
+                <div>
+                    <label for="street">
+                        <isprint value="${Resource.msg('addressForm.street', 'forms', 'Street Address')}" />
+                    </label>
+                    <input type="text" id="street" name="street" value="${pdict.form.street.value ? pdict.form.street.value : ''}" placeholder="Main St" required />
+                </div>
+
+                <div>
+                    <label for="state">
+                        <isprint value="${Resource.msg('addressForm.state', 'forms', 'State')}" />
+                    </label>
+                    <input type="text" id="state" name="state" value="${pdict.form.state.value ? pdict.form.state.value : ''}" placeholder="NY" required />
+                </div>
+            </div>
+
+            <div class="form-group address-info">
+                <div>
+                    <label for="country">
+                        <isprint value="${Resource.msg('addressForm.country', 'forms', 'Country')}" />
+                    </label>
+                    <select id="country" name="country" required onchange="updateCities()">
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Germany">Germany</option>
+                        <option value="France">France</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="city">
+                        <isprint value="${Resource.msg('addressForm.city', 'forms', 'City')}" />
+                    </label>
+                    <select id="city" name="city" required>
+                        <option value="New York">New York</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Toronto">Toronto</option>
+                        <option value="Vancouver">Vancouver</option>
+                        <option value="Mexico City">Mexico City</option>
+                        <option value="Berlin">Berlin</option>
+                        <option value="Paris">Paris</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group address-info street-postal">
+                <div>
+                    <label for="postalCode">
+                        <isprint value="${Resource.msg('addressForm.postalCode', 'forms', 'Postal Code')}" />
+                    </label>
+                    <input type="text" id="postalCode" name="postalCode" value="${pdict.form.postalCode.value ? pdict.form.postalCode.value : ''}" placeholder="13579" required />
+                </div>
+            </div>
+
+            <!-- Payment Details Section -->
+            <div class="section-title">
+                <h3>
+                    <isprint value="${Resource.msg('addressForm.paymentSection', 'forms', 'Payment Details')}" />
+                </h3>
+            </div>
+            <div class="form-group payment-info">
+                <div>
+                    <label for="cardNumber">
+                        <isprint value="${Resource.msg('paymentForm.cardNumber', 'forms', 'Card Number')}" />
+                    </label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1111 3333 5555 7777" required />
+                </div>
+
+                <div>
+                    <label for="expiryMonth">
+                        <isprint value="${Resource.msg('paymentForm.expiryDate', 'forms', 'Expiry Month')}" />
+                    </label>
+                    <select id="expiryMonth" name="expiryMonth" required>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="expiryYear">
+                        <isprint value="${Resource.msg('paymentForm.expiryYear', 'forms', 'Expiry Year')}" />
+                    </label>
+                    <select id="expiryYear" name="expiryYear" required>
+                        <option value="2019">2019</option>
+                        <option value="2025">2025</option>
+                        <option value="2027">2027</option>
+                        <option value="2029">2029</option>
+                        <option value="2031">2031</option>
+                        <option value="2023">2033</option>
+                        <option value="2035">2035</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="cvv">
+                        <isprint value="${Resource.msg('paymentForm.cvv', 'forms', 'CVV')}" />
+                    </label>
+                    <input type="text" id="cvv" name="cvv" placeholder="135" required />
+                </div>
+            </div>
+
+           <!-- Comments Section -->
+            <div class="section-title">
+                <h3>
+                    <isprint value="${Resource.msg('addressForm.commentsSection', 'forms', 'Additional Comments')}" />
+                </h3>
+            </div>
+            <div class="form-group additional-info">
+                <label for="comments">
+                    <isprint value="${Resource.msg('addressForm.comments', 'forms', 'Comments (Max 150 characters)')}" />
+                </label>
+                <textarea id="comments" name="comments" maxlength="150" rows="3"
+                          placeholder="Your comments here..." oninput="updateCharacterCount()"> ${pdict.form.comments.value ? pdict.form.comments.value : ''}</textarea>
+                <p id="char-count">0/150 characters used.</p> <!-- Initial count message -->
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">
+                <isprint value="${Resource.msg('addressForm.submitButton', 'forms', 'Submit')}" />
+            </button>
+        </form>
+    </div>
+
+</isdecorate>
